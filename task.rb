@@ -23,15 +23,15 @@ def q3
   numbers = [1, 5, 8, 10, 2, 3, 2, 3, 3, 1, 4, 5, 9]
 
   # 以下に回答を記載
-  p numbers.group_by(&:itself)
-
+  count = numbers.count(3)
+  puts count
 end
 
 def q4
   sports = ["サッカー", "フットサル", nil, "野球", "バスケ", nil, "バレー"]
 
   # 以下に回答を記載
-
+  p sports.delete_if{|item| item== nil}
   # 以下は変更しないで下さい
   p sports
 end
@@ -41,9 +41,8 @@ def q5
   array2 = [1, 5, 8, 10]
 
   # 以下に回答を記載
-
-end
-
+  p array1.empty?
+  p array2.empty?
 def q6
   numbers1 = [1, 2, 3, 4, 5]
 
