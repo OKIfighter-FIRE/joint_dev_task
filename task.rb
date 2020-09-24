@@ -31,7 +31,7 @@ def q4
   sports = ["サッカー", "フットサル", nil, "野球", "バスケ", nil, "バレー"]
 
   # 以下に回答を記載
-  p sports.delete_if{|item| item== nil}
+  p newsports = sports.compact
   # 以下は変更しないで下さい
   p sports
 end
@@ -43,18 +43,20 @@ def q5
   # 以下に回答を記載
   p array1.empty?
   p array2.empty?
+end
 def q6
   numbers1 = [1, 2, 3, 4, 5]
 
   # 以下に回答を記載
-
+  numbers2 = [10,20,30,40,50]
+  p numbers2.sort
 end
 
 def q7
   array = ["1", "2", "3", "4", "5"]
 
   # 以下に回答を記載
-
+  
   # 以下は変更しないで下さい
   p array
 end
