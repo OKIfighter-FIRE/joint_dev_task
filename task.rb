@@ -57,7 +57,7 @@ def q7
   array = ["1", "2", "3", "4", "5"]
 
   # 以下に回答を記載
-  array.map!{ |n| n.to_i }
+  array.map!(&:to_i)
   # 以下は変更しないで下さい
   p array
 end
@@ -68,10 +68,9 @@ def q8
   # 以下に回答を記載
   upper_case_programming_languages = %w(ruby php python javascript)
 
-  programming_languages.map! {|n| n.capitalize}
-  upper_case_programming_languages.map! {|n| n.upcase} 
-  # animal.map {|a| a.length} 
-
+  programming_languages.map!(&:capitalize)
+  upper_case_programming_languages.map!(&:upcase) 
+  
   # 以下は変更しないで下さい
   p programming_languages
   p upper_case_programming_languages
@@ -81,20 +80,29 @@ def q9
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-  names.each do |name|
-    puts "会員No.1#{name[0]}さん"
-    puts "会員No.2#{name[1]}さん"
-    puts "会員No.3#{name[2]}さん"
-    puts "会員No.4#{name[3]}さん"
-end
-
+  names.each.with_index(1){ |name,i| puts"会員No#{i}.#{name}さん" }
+  
 end
 
 def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
-
+    
   # 以下に回答を記載
 
+  # case foods
+  #   when "うに" then
+  #     puts "好物です"
+  #   else "いか","たこ","しゃけ"
+  #     puts "まあまあ好きです"
+  # end
+# fruits = ["Apple", "Orange", "Lemon", "Grape"].sample; puts fruits
+# case fruits
+# when "Apple" then
+#   puts "甘いけどちょっと食べづらい"
+# when "Orange","Lemon" then
+#   puts "柑橘系、酸っぱいよねー"
+# else
+#   puts "ぶどう大好き！"
 end
 
 def q11
