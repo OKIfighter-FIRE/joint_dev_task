@@ -81,42 +81,34 @@ def q9
 
   # 以下に回答を記載
   names.each.with_index(1){ |name,i| puts"会員No#{i}.#{name}さん" }
-  
+
 end
 
 def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
     
   # 以下に回答を記載
+  foods.each do |food|
+  puts food.include?("うに") ? "好物です" : "まぁまぁ好きです"
+  end  
+end 
 
-  # case foods
-  #   when "うに" then
-  #     puts "好物です"
-  #   else "いか","たこ","しゃけ"
-  #     puts "まあまあ好きです"
-  # end
-# fruits = ["Apple", "Orange", "Lemon", "Grape"].sample; puts fruits
-# case fruits
-# when "Apple" then
-#   puts "甘いけどちょっと食べづらい"
-# when "Orange","Lemon" then
-#   puts "柑橘系、酸っぱいよねー"
-# else
-#   puts "ぶどう大好き！"
-end
-
-def q11
+  def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
   # 以下に回答を記載
-
+  p "ユーザーの趣味一覧"
+   sports.flatten.uniq.each.with_index(1) do |sport,i|
+  p "No#{i} #{sport}"
+   end
 end
 
 def q12
   data = { user: { name: "satou", age: 33 } }
 
   # 以下に回答を記載
-
+  puts data[:user][:name]
+  
 end
 
 def q13
