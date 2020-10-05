@@ -115,22 +115,14 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-  user_data[:age] = 32
-  user_data[:address] = "沖縄"
-  puts user_data
-  
+  p user_data.update(update_data)
 end
 
 def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
 
   # 以下に回答を記載
-  p data[:name]
-  p data[:age]
-  p data[:address]
-  p data[:hobby]
-  p data[:email]
-  
+  p data.keys
 end
 
 def q15
@@ -138,14 +130,17 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
-#   data1.each do |data,key|
-#   puts data.include?("age") ? "OK" : "NG"
+if data1.admin?
+  "OK."
+else
+  "NG."
+end
+  
+  # data1.zip(data2) do |key,age|
 
-#   data2.each do |data,key|
-#     puts data.include?("age")? "OK" : "NG"
-#     end  
-#   end
-# end 
+  # puts data1.include?("age")? "OK" : "NG"
+  # end
+end 
 
 def q16
   users = [
@@ -156,14 +151,14 @@ def q16
   ]
 
   # 以下に回答を記載
-  # users.each do |name, age|
-#   books.each do |key, val|
-    # puts "私の名前は#{name}です"
-    # puts "年齢は#{age}です"
-#   puts “#{key}、#{val}円”
-  # end
-# end
-# end
+  users.each do |name, age|
+  books.each do |key, val|
+    puts "私の名前は#{name}です"
+    puts "年齢は#{age}です"
+  puts “#{key}、#{val}円”
+  end
+end
+end
 
 class UserQ17
   # 以下に回答を記載
