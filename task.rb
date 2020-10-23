@@ -182,9 +182,9 @@ class UserQ18
      @name = name
   end
   def introduce
-    if @age == 32 then
+    if @age >= 32 
       "こんにちは#{@name}と申します。宜しくお願いいたします"    
-    else @age == 9 
+    else @age >= 9 
       "はいさいまいど〜、#{@name}です！！！"
     end
   end
@@ -201,8 +201,11 @@ end
 class Item
   # 以下を修正して下さい
 
-  def initialize(name)
+  def initialize(name:)
     @name = name
+  end
+  def name
+     "#{@name}"
   end
 end
 
@@ -214,12 +217,17 @@ end
 
 class UserQ20
   # 以下に回答を記載
-
+  def initialize(name:,age:)
+    @name = name
+    @age = age()
+  end
 end
 
 class Zoo
   # 以下に回答を記載
-
+  def info_entry_fee
+    "#{@name}さんの入場料は#{zoo[:entry_fee]}円です"
+  end
 end
 
 
