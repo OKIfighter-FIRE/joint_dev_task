@@ -1,5 +1,6 @@
 # 課題の回答は このファイル をご利用下さい。
 # 回答の出力を確認される際は，「ruby main.rb」をターミナルから実行して下さい。
+require"pry"
 
 def q1
   names = ["田中", "佐藤", "佐々木", "高橋"]
@@ -182,9 +183,9 @@ class UserQ18
      @name = name
   end
   def introduce
-    if @age >= 32 
+    if @age >= 20 
       "こんにちは#{@name}と申します。宜しくお願いいたします"    
-    else @age >= 9 
+    else @age >= 9
       "はいさいまいど〜、#{@name}です！！！"
     end
   end
@@ -200,13 +201,12 @@ end
 
 class Item
   # 以下を修正して下さい
+  attr_reader :name
 
   def initialize(name:)
     @name = name
   end
-  def name
-     "#{@name}"
-  end
+  
 end
 
 def q19
@@ -219,14 +219,29 @@ class UserQ20
   # 以下に回答を記載
   def initialize(name:,age:)
     @name = name
-    @age = age()
+    @age = age
   end
 end
 
 class Zoo
   # 以下に回答を記載
-  def info_entry_fee
-    "#{@name}さんの入場料は#{zoo[:entry_fee]}円です"
+  def initialize(name:,entry_fee:)
+    @name = name
+    @entry_fee = entry_fee
+    
+  end
+
+  def info_entry_fee(user)
+    binding.pry
+    # if @age = 3 
+    #   "#{@name}さんの入場料金は#{[@entry_fee][@infant]}円です" 
+    # else @age = 10
+    #   "#{@name}さんの入場料金は#{[@entry_fee][@children]}円です" 
+    # else @age = 32
+    #   "#{@name}さんの入場料金は#{[@entry_fee][@adult]}円です" 
+    # else @age = 108
+    #   "#{@name}さんの入場料金は#{[@entry_fee][@senior]}円です" 
+    # end
   end
 end
 
