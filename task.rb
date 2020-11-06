@@ -217,7 +217,7 @@ end
 
 class UserQ20
   # 以下に回答を記載
-  attr_reader 'name', 'age'
+  attr_reader :name, :age
   def initialize(name:,age:)
     @name = name
     @age = age
@@ -234,13 +234,13 @@ class Zoo
   def info_entry_fee(user)
     # binding.pry
     entry_fee = case user.age
-     when (0..5)
+     when 0..5
       @entry_fee[:infant]
-    when (6..12)
+    when 6..12
       @entry_fee[:children]
-    when (13..64)
+    when 13..64
       @entry_fee[:adult]
-    when (65..120)
+    when 65..120
       @entry_fee[:senior]
     end
     p "#{user.name}さんの入場料は#{entry_fee}円です"
