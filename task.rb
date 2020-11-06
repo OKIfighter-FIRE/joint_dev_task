@@ -1,6 +1,6 @@
 # 課題の回答は このファイル をご利用下さい。
 # 回答の出力を確認される際は，「ruby main.rb」をターミナルから実行して下さい。
-require"pry"
+require "pry"
 
 def q1
   names = ["田中", "佐藤", "佐々木", "高橋"]
@@ -217,6 +217,7 @@ end
 
 class UserQ20
   # 以下に回答を記載
+  attr_reader 'name', 'age'
   def initialize(name:,age:)
     @name = name
     @age = age
@@ -228,20 +229,21 @@ class Zoo
   def initialize(name:,entry_fee:)
     @name = name
     @entry_fee = entry_fee
-    
   end
 
   def info_entry_fee(user)
-    binding.pry
-    # if @age = 3 
-    #   "#{@name}さんの入場料金は#{[@entry_fee][@infant]}円です" 
-    # else @age = 10
-    #   "#{@name}さんの入場料金は#{[@entry_fee][@children]}円です" 
-    # else @age = 32
-    #   "#{@name}さんの入場料金は#{[@entry_fee][@adult]}円です" 
-    # else @age = 108
-    #   "#{@name}さんの入場料金は#{[@entry_fee][@senior]}円です" 
-    # end
+    # binding.pry
+    entry_fee = case user.age
+     when (0..5)
+      @entry_fee[:infant]
+    when (6..12)
+      @entry_fee[:children]
+    when (13..64)
+      @entry_fee[:adult]
+    when (65..120)
+      @entry_fee[:senior]
+    end
+    p "#{user.name}さんの入場料は#{entry_fee}円です"
   end
 end
 
